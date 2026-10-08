@@ -27,3 +27,4 @@ By signing below, we acknowledge that we have read, discussed, and agreed to the
 Team Member Signatures:  
 Zhiyu Li/ Oct1, 2026
 Wenqi Luo/ Oct1, 2026
+Yue Pan/ Oct8, 2026

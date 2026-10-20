@@ -57,6 +57,20 @@ A text-based escape room game for the CSC207 Team Project.
 6. The player cannot access locked areas or obtain certain tools without completing the required item interactions.
 7. Completed interactions remain completed during the current game session.
 
+### US4: Move Between Rooms
+
+**As a player, I want to move through unlocked exits so that I can explore other rooms and continue my escape.
+
+**Responsible member:** TBD
+
+**Acceptance criteria:**
+
+1. The game lists the exits in the current room.
+2. Choosing an unlocked exit moves the player to the connected room.
+3. After moving, the game displays the new room’s name and description.
+4. Choosing a locked exit displays a message and keeps the player in the current room.
+5. Items in the player’s inventory remain available after moving.
+
 ## External API
 
 ## Design

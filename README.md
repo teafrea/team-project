@@ -59,7 +59,7 @@ A text-based escape room game for the CSC207 Team Project.
 
 ### US4: Move Between Rooms
 
-**As a player, I want to move through unlocked exits so that I can explore other rooms and continue my escape.
+**As a player, I want to move through unlocked exits so that I can explore other rooms and continue my escape.**
 
 **Responsible member:** TBD
 

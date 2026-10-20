@@ -29,6 +29,18 @@ A text-based escape room game for the CSC207 Team Project.
 4. The inventory displays the collected item's name.
 5. Collecting an item twice does not create a duplicate.
 
+### US2: Get Hints
+
+**As a player, I want to request hints when I am stuck so that I can continue solving puzzles and make progress in the game.**
+
+**Responsible member:** TBD
+
+**Acceptance criteria:**
+
+1. The game allows the player to request hints.
+2. Requesting a hint displays information relevant to the player's current stage or puzzle.
+3. If no hint is available, the game displays a message indicating that no hint is available.
+
 ## External API
 
 ## Design

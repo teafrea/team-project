@@ -41,21 +41,19 @@ A text-based escape room game for the CSC207 Team Project.
 2. Requesting a hint displays information relevant to the player's current stage or puzzle.
 3. If no hint is available, the game displays a message indicating that no hint is available.
 
-### US3: Use Items to Interact with the Environment
+### US3: Use Items
 
-**As a player, I want to use items from my inventory to solve puzzles, unlock doors or hidden areas, and obtain new tools so that I can explore more rooms and progress through the escape room.**
+**As a player, I want to use items from my inventory so I can solve puzzles, unlock areas, and find new tools.**
 
 **Responsible member:** TBD
 
 **Acceptance criteria:**
 
-1. The player can view and select items from their inventory.
-2. The player can use collected items to interact with objects in the current room.
-3. Using the correct item allows the player to perform an action, such as solving a puzzle, unlocking a door or hidden area, or obtaining another item.
-4. Using an incorrect item displays a message indicating that the item cannot be used for that interaction.
-5. The game updates the environment after a successful interaction (e.g., unlocking a door, revealing a hidden area, or making a new item available).
-6. The player cannot access locked areas or obtain certain tools without completing the required item interactions.
-7. Completed interactions remain completed during the current game session.
+1. The player can view and select an inventory item to use on an object in the current room.
+2. Using the correct item solves a puzzle, unlocks an area, or reveals a new tool.
+3. Using an incorrect item displays a message explaining that it cannot be used there.
+4. Locked areas and restricted tools remain unavailable until the required interaction is completed.
+5. Successful interactions update the room and remain completed during the current game session.
 
 ### US4: Move Between Rooms
 

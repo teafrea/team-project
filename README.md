@@ -69,6 +69,21 @@ A text-based escape room game for the CSC207 Team Project.
 4. Choosing a locked exit displays a message and keeps the player in the current room.
 5. Items in the player’s inventory remain available after moving.
 
+### US5: Save and Load Game Progress
+
+**As a player, I want to save my game and load it later so that I can continue my escape without starting over.**
+
+**Responsible member:** TBD
+
+**Acceptance criteria:**
+
+1. The player can save their current game progress.
+2. The saved progress includes the current room, inventory, remaining room items, solved puzzles, and unlocked exits.
+3. Loading a saved game restores these states so the player can continue from where they left off.
+4. The saved game remains available after closing and restarting the application.
+5. If saving or loading fails, the game displays an error message without changing the current game state.
+6. If no saved game exists, the game informs the player when they attempt to load one.
+
 ## External API
 
 ## Design

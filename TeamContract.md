@@ -28,3 +28,4 @@ Team Member Signatures:
 Zhiyu Li/ Oct1, 2026
 Wenqi Luo/ Oct1, 2026
 Yue Pan/ Oct8, 2026
+Jan Fung /Nov10, 2026

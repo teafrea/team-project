@@ -8,7 +8,7 @@
 - Wenqi Luo
 - Yue Pan
 - Jan Fung
-- Bard Pan
+- Name TBD
 
 ---
 
@@ -167,7 +167,7 @@ MVP scope and individual assignments are TBD after team discussion.
 | Wenqi Luo | TBD |
 | Yue Pan | TBD |
 | Jan Fung | TBD |
-| Bard Pan | TBD |
+| Name TBD | TBD |
 
 ---
 

@@ -1,0 +1,165 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2250" height="1470" viewBox="0 0 2250 1470" role="img" aria-labelledby="title desc"><title id="title">Escape Room Adventure — story templates, scene interactions and puzzle types</title><desc id="desc">A game session uses one story template and contains rooms. Rooms contain scene objects, clues, items, exits and puzzles. A scene object offers interactions, including actions without an inventory item. InteractionPuzzle and DeductionPuzzle specialize Puzzle. Per-game generated values keep clue text and expected answers consistent.</desc><defs><marker id="triangle" viewBox="0 0 16 16" refX="15" refY="8" markerWidth="16" markerHeight="16" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1 15 8 1 15z" fill="white" stroke="black" stroke-width="1.2"/></marker></defs><style>text{font-family:Arial,Helvetica,sans-serif;font-size:16px;fill:black}.name{font-size:19px;font-weight:bold}.label{font-size:16px}.edge{fill:none;stroke:black;stroke-width:1.2}</style><rect width="2250" height="1470" fill="white"/>
+<path d="M810 110 H1200" class="edge"/>
+<text x="825" y="98" class="" text-anchor="start">0..*</text>
+<text x="1185" y="98" class="" text-anchor="end">1</text>
+<text x="1005" y="135" class="" text-anchor="middle">template</text>
+<path d="M720 258 V310 H1850 V192" class="edge"/>
+<text x="734" y="285" class="" text-anchor="start">0..1</text>
+<text x="1862" y="217" class="" text-anchor="start">0..*</text>
+<text x="1450" y="298" class="" text-anchor="middle">inventory</text>
+<path d="M430 258 V338 H1020 V360" class="edge"/>
+<polygon fill="black" stroke="black" points="430,258 425,268 430,278 435,268"/>
+<text x="417" y="289" class="" text-anchor="end">1</text>
+<text x="1034" y="351" class="" text-anchor="start">1..*</text>
+<text x="850" y="326" class="" text-anchor="middle">rooms</text>
+<path d="M1220 410 H2040 V192" class="edge"/>
+<text x="1234" y="431" class="" text-anchor="start">0..1</text>
+<text x="2052" y="217" class="" text-anchor="start">0..*</text>
+<text x="1625" y="398" class="" text-anchor="middle">availableItems</text>
+<path d="M820 435 H210 V690" class="edge"/>
+<polygon fill="black" stroke="black" points="820,435 810,430 800,435 810,440"/>
+<text x="791" y="423" class="" text-anchor="start">1</text>
+<text x="222" y="680" class="" text-anchor="start">0..*</text>
+<text x="515" y="423" class="" text-anchor="middle">objects</text>
+<path d="M910 514 V590 H720 V690" class="edge"/>
+<polygon fill="black" stroke="black" points="910,514 905,524 910,534 915,524"/>
+<text x="924" y="542" class="" text-anchor="start">1</text>
+<text x="732" y="680" class="" text-anchor="start">0..*</text>
+<text x="801" y="578" class="" text-anchor="middle">clues</text>
+<path d="M1140 514 V600 H1250 V690" class="edge"/>
+<polygon fill="black" stroke="black" points="1140,514 1135,524 1140,534 1145,524"/>
+<text x="1154" y="542" class="" text-anchor="start">1</text>
+<text x="1264" y="680" class="" text-anchor="start">0..*</text>
+<text x="1205" y="588" class="" text-anchor="middle">exits</text>
+<path d="M1220 455 H1900 V625" class="edge"/>
+<polygon fill="black" stroke="black" points="1220,455 1230,460 1240,455 1230,450"/>
+<text x="1248" y="444" class="" text-anchor="start">1</text>
+<text x="1914" y="614" class="" text-anchor="start">0..*</text>
+<text x="1630" y="443" class="" text-anchor="middle">puzzles</text>
+<path d="M210 830 V1020" class="edge"/>
+<polygon fill="black" stroke="black" points="210,830 205,840 210,850 215,840"/>
+<text x="224" y="859" class="" text-anchor="start">1</text>
+<text x="224" y="1008" class="" text-anchor="start">0..*</text>
+<text x="197" y="948" class="" text-anchor="end">actions</text>
+<path d="M1525 1070 V985 H1790 V871" class="edge" marker-end="url(#triangle)"/>
+<path d="M2045 1070 V871" class="edge" marker-end="url(#triangle)"/>
+<path d="M2045 1178 V1280" class="edge"/>
+<polygon fill="black" stroke="black" points="2045,1178 2040,1188 2045,1198 2050,1188"/>
+<text x="2060" y="1207" class="" text-anchor="start">1</text>
+<text x="2060" y="1268" class="" text-anchor="start">0..1</text>
+<text x="2030" y="1247" class="" text-anchor="end">question</text>
+<rect x="50" y="35" width="760" height="223" fill="white" stroke="black" stroke-width="1.2"/>
+<text x="430.0" y="58" class="name" text-anchor="middle">GameSession</text>
+<path d="M50 69h760" class="edge"/>
+<text x="60" y="93" class="" text-anchor="start">- template: StoryTemplate</text>
+<text x="60" y="116" class="" text-anchor="start">- currentRoom: Room</text>
+<text x="60" y="139" class="" text-anchor="start">- generatedValues: Map</text>
+<text x="60" y="162" class="" text-anchor="start">- escaped: boolean</text>
+<path d="M50 175h760" class="edge"/>
+<text x="60" y="199" class="" text-anchor="start">+ interact(objectId: String, actionId: String, itemId: String [0..1]): boolean</text>
+<text x="60" y="222" class="" text-anchor="start">+ submitAnswer(puzzleId: String, answer: String): boolean</text>
+<text x="60" y="245" class="" text-anchor="start">+ checkPuzzleCompletion(): void</text>
+<rect x="1200" y="35" width="355" height="209" fill="white" stroke="black" stroke-width="1.2"/>
+<text x="1377.5" y="58" class="name" text-anchor="middle">StoryTemplate</text>
+<path d="M1200 69h355" class="edge"/>
+<text x="1210" y="93" class="" text-anchor="start">- id: String</text>
+<text x="1210" y="116" class="" text-anchor="start">- title: String</text>
+<text x="1210" y="139" class="" text-anchor="start">- background: String</text>
+<text x="1210" y="162" class="" text-anchor="start">- startingRoomId: String</text>
+<text x="1210" y="185" class="" text-anchor="start">- roomDefinitions: List</text>
+<text x="1210" y="208" class="" text-anchor="start">- randomizationRules: Map</text>
+<text x="1210" y="231" class="" text-anchor="start">- escapeCondition: Condition</text>
+<rect x="1810" y="75" width="290" height="117" fill="white" stroke="black" stroke-width="1.2"/>
+<text x="1955.0" y="98" class="name" text-anchor="middle">Item</text>
+<path d="M1810 109h290" class="edge"/>
+<text x="1820" y="133" class="" text-anchor="start">- id: String {id}</text>
+<text x="1820" y="156" class="" text-anchor="start">- name: String</text>
+<text x="1820" y="179" class="" text-anchor="start">- available: boolean</text>
+<rect x="820" y="360" width="400" height="154" fill="white" stroke="black" stroke-width="1.2"/>
+<text x="1020.0" y="383" class="name" text-anchor="middle">Room</text>
+<path d="M820 394h400" class="edge"/>
+<text x="830" y="418" class="" text-anchor="start">- id: String {id}</text>
+<text x="830" y="441" class="" text-anchor="start">- name: String</text>
+<text x="830" y="464" class="" text-anchor="start">- descriptionTemplate: String</text>
+<path d="M820 477h400" class="edge"/>
+<text x="830" y="501" class="" text-anchor="start">+ describe(game: GameSession): String</text>
+<rect x="60" y="690" width="300" height="140" fill="white" stroke="black" stroke-width="1.2"/>
+<text x="210.0" y="713" class="name" text-anchor="middle">SceneObject</text>
+<path d="M60 724h300" class="edge"/>
+<text x="70" y="748" class="" text-anchor="start">- id: String {id}</text>
+<text x="70" y="771" class="" text-anchor="start">- name: String</text>
+<text x="70" y="794" class="" text-anchor="start">- description: String</text>
+<text x="70" y="817" class="" text-anchor="start">- state: Map</text>
+<rect x="470" y="690" width="500" height="177" fill="white" stroke="black" stroke-width="1.2"/>
+<text x="720.0" y="713" class="name" text-anchor="middle">Clue</text>
+<path d="M470 724h500" class="edge"/>
+<text x="480" y="748" class="" text-anchor="start">- id: String {id}</text>
+<text x="480" y="771" class="" text-anchor="start">- textTemplate: String</text>
+<text x="480" y="794" class="" text-anchor="start">- visibilityCondition: Condition [0..1]</text>
+<path d="M470 807h500" class="edge"/>
+<text x="480" y="831" class="" text-anchor="start">+ isVisible(game: GameSession): boolean</text>
+<text x="480" y="854" class="" text-anchor="start">+ render(game: GameSession): String</text>
+<rect x="1080" y="690" width="340" height="200" fill="white" stroke="black" stroke-width="1.2"/>
+<text x="1250.0" y="713" class="name" text-anchor="middle">Exit</text>
+<path d="M1080 724h340" class="edge"/>
+<text x="1090" y="748" class="" text-anchor="start">- id: String {id}</text>
+<text x="1090" y="771" class="" text-anchor="start">- label: String</text>
+<text x="1090" y="794" class="" text-anchor="start">- destination: Room [0..1]</text>
+<text x="1090" y="817" class="" text-anchor="start">- finalExit: boolean</text>
+<text x="1090" y="840" class="" text-anchor="start">- locked: boolean</text>
+<path d="M1080 853h340" class="edge"/>
+<text x="1090" y="877" class="" text-anchor="start">+ unlock(): void</text>
+<rect x="1630" y="625" width="570" height="246" fill="white" stroke="black" stroke-width="1.2"/>
+<text x="1915.0" y="648" class="name" text-anchor="middle" font-style="italic">Puzzle</text>
+<path d="M1630 659h570" class="edge"/>
+<text x="1640" y="683" class="" text-anchor="start">- id: String {id}</text>
+<text x="1640" y="706" class="" text-anchor="start">- prompt: String</text>
+<text x="1640" y="729" class="" text-anchor="start">- hint: String [0..1]</text>
+<text x="1640" y="752" class="" text-anchor="start">- solved: boolean</text>
+<text x="1640" y="775" class="" text-anchor="start">- availabilityCondition: Condition [0..1]</text>
+<text x="1640" y="798" class="" text-anchor="start">- completionEffects: Effect [0..*]</text>
+<path d="M1630 811h570" class="edge"/>
+<text x="1640" y="835" class="" text-anchor="start">+ isAvailable(game: GameSession): boolean</text>
+<text x="1640" y="858" class="" text-anchor="start">+ complete(game: GameSession): void</text>
+<rect x="30" y="1020" width="690" height="200" fill="white" stroke="black" stroke-width="1.2"/>
+<text x="375.0" y="1043" class="name" text-anchor="middle">Interaction</text>
+<path d="M30 1054h690" class="edge"/>
+<text x="40" y="1078" class="" text-anchor="start">- id: String {id}</text>
+<text x="40" y="1101" class="" text-anchor="start">- label: String</text>
+<text x="40" y="1124" class="" text-anchor="start">- requiredItem: Item [0..1]</text>
+<text x="40" y="1147" class="" text-anchor="start">- preconditions: Condition [0..*]</text>
+<text x="40" y="1170" class="" text-anchor="start">- effects: Effect [0..*]</text>
+<path d="M30 1183h690" class="edge"/>
+<text x="40" y="1207" class="" text-anchor="start">+ execute(game: GameSession, item: Item [0..1]): boolean</text>
+<rect x="1260" y="1070" width="530" height="108" fill="white" stroke="black" stroke-width="1.2"/>
+<text x="1525.0" y="1093" class="name" text-anchor="middle">InteractionPuzzle</text>
+<path d="M1260 1104h530" class="edge"/>
+<text x="1270" y="1128" class="" text-anchor="start">- completionCondition: Condition</text>
+<path d="M1260 1141h530" class="edge"/>
+<text x="1270" y="1165" class="" text-anchor="start">+ checkCompletion(game: GameSession): boolean</text>
+<rect x="1870" y="1070" width="350" height="108" fill="white" stroke="black" stroke-width="1.2"/>
+<text x="2045.0" y="1093" class="name" text-anchor="middle">DeductionPuzzle</text>
+<path d="M1870 1104h350" class="edge"/>
+<text x="1880" y="1128" class="" text-anchor="start">- questionSource: String</text>
+<path d="M1870 1141h350" class="edge"/>
+<text x="1880" y="1165" class="" text-anchor="start">+ submitAnswer(answer: String): boolean</text>
+<rect x="1820" y="1280" width="395" height="174" fill="white" stroke="black" stroke-width="1.2"/>
+<text x="2017.5" y="1300" class="" text-anchor="middle">«value object»</text>
+<text x="2017.5" y="1323" class="name" text-anchor="middle">Question</text>
+<path d="M1820 1334h395" class="edge"/>
+<text x="1830" y="1358" class="" text-anchor="start">- prompt: String</text>
+<text x="1830" y="1381" class="" text-anchor="start">- choices: String [0..*]</text>
+<text x="1830" y="1404" class="" text-anchor="start">- expectedAnswer: String</text>
+<path d="M1820 1417h395" class="edge"/>
+<text x="1830" y="1441" class="" text-anchor="start">+ isCorrect(answer: String): boolean</text>
+<rect x="45" y="1325" width="520" height="91" fill="white" stroke="black" stroke-width="1.2"/>
+<text x="305.0" y="1345" class="" text-anchor="middle">«interface»</text>
+<text x="305.0" y="1368" class="name" text-anchor="middle">Condition</text>
+<path d="M45 1379h520" class="edge"/>
+<text x="55" y="1403" class="" text-anchor="start">+ test(game: GameSession): boolean</text>
+<rect x="695" y="1325" width="500" height="91" fill="white" stroke="black" stroke-width="1.2"/>
+<text x="945.0" y="1345" class="" text-anchor="middle">«interface»</text>
+<text x="945.0" y="1368" class="name" text-anchor="middle">Effect</text>
+<path d="M695 1379h500" class="edge"/>
+<text x="705" y="1403" class="" text-anchor="start">+ apply(game: GameSession): void</text>
+</svg>
